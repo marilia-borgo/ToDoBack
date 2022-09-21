@@ -31,7 +31,7 @@ def addtask(request):
         valores = request.body
         task = json.loads(valores.decode('utf-8'))
         Tasks.objects.create(titulo=task.get('titulo'), projeto=task.get('projeto'),
-                            dueTo=task.get('DueTo'),feito=task.get('feito'),)
+                            dueTo=task.get('dueTo'),feito=task.get('feito'),)
         return JsonResponse({'message': 'sucesso','code': 200})
     else:
         response = {'erro': 'precisa ser Get'}
